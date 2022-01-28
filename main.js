@@ -13,6 +13,7 @@
 
 // DOM  Document Object Model
 
+
 /* Menu Event List */
 const nav = document.querySelector("#header nav");
 const toggle = document.querySelectorAll("nav .toggle");
@@ -24,7 +25,6 @@ for(const element of toggle) {
 }
 
 /* Closed Menu */
-
 const links = document.querySelectorAll("nav ul li a")
 
 for(const link of links) {
@@ -45,4 +45,14 @@ window.addEventListener("scroll", function () {
         //menor que a altura do header
         header.classList.remove("scroll");
     }
-})
+});
+
+// Testimonials carousel slider Swiper
+const swiper = new Swiper(".swiper-container", {
+    slidesPerview: 1,
+    pagination: {
+        el: ".swiper-pagination"
+    },
+    mousewheel: true,
+    keyboard: true,
+});
