@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,19 @@
 
     <!--Icons-->
     <link rel="stylesheet" href="assets/icons/style.css">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!--Styles-->
     <link rel="stylesheet" href="style.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap">
+    
+    
 </head>
-<body>
 
+<body>
     <header id="header">
         <nav class="container">
             <a class="logo" href="#">beauty<span>salon</span>.</a>
@@ -35,56 +40,67 @@
         </nav>
     </header>
     <main>
+        <!-- HOME -->
         <section class="section" id="home">
             <div class="container grid">
                 <div class="image">
-                    <img src="Img.png" alt="Mulher sorrindo penteando outra mulher">
+                    <img src="./images/Img.png" alt="Mulher sorrindo penteando outra mulher">
                 </div>
                 <div class="text">
                     <h2 class="title">Saúde natural para os seus cabelos</h2>
                     <p>Um salão exclusivo em São Paulo, especializado em tratamentos naturais.</p>
                     <a class="button" href="#">Agendar um Horário</a>
                 </div>
-            </div>   
+            </div>
         </section>
 
         <div class="divider-1"></div>
 
+        <!-- ABOUT -->
         <section class="section" id="about">
             <div class="container grid">
                 <div class="image">
-                    <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" 
-                    alt="3 Mulheres Sorrindo">
+                    <img src="/images/3mulheres.jpg" alt="3 Mulheres Sorrindo">
                 </div>
                 <div class="text">
                     <h2 class="title">Sobre nós</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint velit dolorum, fugit accusantium sed eveniet repellat ratione dolore laboriosam magni commodi nobis alias deserunt cum nulla non, ullam error perferendis.</p>
-                    <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint velit dolorum, fugit accusantium sed eveniet repellat ratione dolore laboriosam magni commodi nobis alias deserunt cum nulla non, ullam error perferendis.</p>
-                    <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint velit dolorum, fugit accusantium sed eveniet repellat ratione dolore laboriosam magni commodi nobis alias deserunt cum nulla non, ullam error perferendis.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint velit dolorum, fugit accusantium
+                        sed eveniet repellat ratione dolore laboriosam magni commodi nobis alias deserunt cum nulla non,
+                        ullam error perferendis.</p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint velit dolorum, fugit accusantium
+                        sed eveniet repellat ratione dolore laboriosam magni commodi nobis alias deserunt cum nulla non,
+                        ullam error perferendis.</p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint velit dolorum, fugit accusantium
+                        sed eveniet repellat ratione dolore laboriosam magni commodi nobis alias deserunt cum nulla non,
+                        ullam error perferendis.</p>
                 </div>
             </div>
         </section>
 
         <div class="divider-2"></div>
 
+        <!-- SERVICES -->
         <section class="section" id="services">
             <div class="container grid">
                 <header>
                     <h2 class="title">Serviços</h2>
-                    <p>Com mais de 10 anos no mercado, o <strong>BeautySalon</strong> já 
-                    conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais</p>
+                    <p>Com mais de 10 anos no mercado, o <strong>BeautySalon</strong> já
+                        conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais</p>
                 </header>
                 <div class="card grid">
                     <i class="icon-woman-hair"></i>
                     <h3 class="title">Terapia Capilar</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum repellendus deserunt a ipsum cupiditate commodi autem!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum repellendus deserunt a
+                        ipsum cupiditate commodi autem!</p>
                 </div>
-                <div class="card grid">
+                <div class="card">
                     <i class="icon-trim"></i>
                     <h3 class="title">Cortes</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-                <div class="card grid">
+                <div class="card">
                     <i class="icon-cosmetic"></i>
                     <h3 class="title">Tratamentos</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -94,12 +110,78 @@
 
         <div class="divider-1"></div>
 
-        <section class="section" id="testimonials">Depoimentos<section>
+        <!-- TESTIMONIALS -->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <header>
+                    <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+                </header>
+                <div class="testimonials swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sit amet, consectetur
+                                    adipisicing elit. Sint sit amet, consectetur adipisicing elit. Sint sit amet,
+                                    consectetur adip
+                                </p>
+                                <cite>
+                                    <img src="./images/34.jpg" alt="foto da wanessa">
+                                    Wanessa Souza
+                                </cite>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sit amet, consectetur
+                                    adipisicing elit. Sint sit amet, consectetur adipisicing elit. Sint sit amet,
+                                    consectetur
+                                    adip
+                                </p>
+                                <cite>
+                                    <img src="./images/57.jpg" alt="foto de franciele">
+                                    Franciele Venega
+                                </cite>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sit amet, consectetur
+                                    adipisicing elit. Sint sit amet, consectetur adipisicing elit. Sint sit amet,
+                                    consectetur
+                                    adip
+                                </p>
+                                <cite>
+                                    <img src="./images/68.jpg" alt="foto da valeska">
+                                    Valeska Fabris
+                                </cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider-2"></div>
+
+        
 
     </main>
 
     <footer></footer>
 
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>  
+    <!-- MAIN>JS -->
     <script src="main.js"></script>
 </body>
+
 </html>
