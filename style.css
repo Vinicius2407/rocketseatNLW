@@ -119,16 +119,16 @@ body {
     margin-bottom: 2rem;
     display: flex;
 
-    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
     background-color: var(--body-color);
+    width: 100%;
 }
 
 #header.scroll {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 2);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -186,7 +186,6 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
-    visibility: visible;
 }
 
 nav .menu {
@@ -267,14 +266,14 @@ nav.show div.icon-close {
 }
 
 #home .image::before {
-    content: " ";
+    content: "";
     height: 100%;
     width: 100%;
     background: var(--base-color-second);
     position: absolute;
     top: -16.8%;
     left: 16.7%;
-    z-index: -0;
+    z-index: 0;
 }
 
 #home .image img {
@@ -299,7 +298,6 @@ nav.show div.icon-close {
 
 #home .text p {
     margin-bottom: 2rem;
-    max-width: 100%;
 }
 
 
@@ -317,7 +315,7 @@ nav.show div.icon-close {
 }
 
 #about .image::before {
-    content: " ";
+    content: "";
     height: 100%;
     width: 100%;
     background: var(--base-color-second);
@@ -343,7 +341,7 @@ nav.show div.icon-close {
 
 /* SERVICES */
 
-.card.grid {
+.cards.grid {
     gap: 1.5rem;
 }
 
@@ -365,4 +363,70 @@ nav.show div.icon-close {
 .card .title {
     font-size: 1.5rem;
     margin-bottom: .75rem;
+}
+
+/* TESTIMONIALS */
+#testimonials {
+    background: white;
+}
+
+#testimonials .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#testimonials header {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+}
+
+#testimonials blockquote{
+    padding: 2rem;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.8);
+    border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+    position: relative;
+    text-indent: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+}
+
+#testimonials blockquote p span{
+    font: 700 2.5rem serif;
+    position: absolute;
+    top: -0.375rem;
+    left: -1.875rem;
+    color: var(--base-color)
+}
+
+#testimonials cite{
+    display: flex;
+    align-items: center;
+    font-style: normal;
+}
+
+#testimonials cite img{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    clip-path: circle();
+    margin-right: 0.5rem;
+}
+
+/* SWIPER */
+.swiper-slide{
+    height: auto;
+    padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+.swiper-pagination-bullet-active{
+    background: var(--base-color);
 }
