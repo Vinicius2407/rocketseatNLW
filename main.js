@@ -48,11 +48,11 @@ window.addEventListener("scroll", function () {
 });
 
 // Testimonials carousel slider Swiper
-const swiper = new Swiper(".swiper-container", {
+const swiper = new Swiper(".swiper", {
     slidesPerview: 1,
     pagination: {
         el: ".swiper-pagination"
     },
     mousewheel: true,
-    keyboard: true,
+    // keyboard: true,
 });
