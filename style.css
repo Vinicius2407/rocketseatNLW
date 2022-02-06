@@ -32,6 +32,10 @@ img {
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
     --body-color: hsl(0 0% 98%);
+
+    /* Fonts */
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
 }
 
 /*baseeee*/
@@ -48,7 +52,7 @@ body {
 }
 
 .title {
-    font: 700 1.875rem "Poppins", sans-serif;
+    font: 700 var(--title-font-size) "Poppins", sans-serif;
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -99,11 +103,15 @@ body {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: calc(5rem + var(--header-height));
 }
 
 .section .title {
     margin-bottom: 1rem;
+}
+
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
 }
 
 .section header {
@@ -131,10 +139,6 @@ body {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
-
-main {
-    margin-top: calc(var(--header-height) + 2rem);
-}
 
 /*LOGO*/
 
@@ -169,7 +173,8 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, 
+nav ul li a.active {
     color: var(--base-color);
 }
 
@@ -186,7 +191,8 @@ nav ul li a::after {
     transition: width 0.2s
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after{
     width: 100%;
 }
 
@@ -471,6 +477,10 @@ footer {
     background: var(--base-color);
 }
 
+footer.section {
+    padding: 4rem 0;
+}
+
 footer .logo {
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -486,7 +496,12 @@ footer i {
     color: var(--text-color-light)
 }
 
-footer .social a{
+footer .social {
+    grid-auto-flow: column;
+    width: fit-content;
+}
+
+footer .social a {
     margin-right: 2rem;
     transition: .3s;
     display: inline-block;
@@ -495,6 +510,7 @@ footer .social a{
 footer .social a:hover {
     transform: translateY(-5px);
 }
+
 /* BACK TO TOP */
 .back-to-top {
     background: var(--base-color);
@@ -522,3 +538,127 @@ footer .social a:hover {
     opacity: 1;
     transform: translateY(0)
 }
+
+
+/* ________________RESPONSIVES________________ */
+/* MEDIA QUERIS */
+/* Extra large devices: 1200 > */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section {
+        padding: 10rem 0;
+    }
+
+    .section header {
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button {
+        height: 3.125rem;
+    }
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .menu ul li a.title {
+        font: 400 1rem 'Poppins', sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    nav .menu ul li a.title.active {
+        font-weight: bold;
+        -webkit-font-smoothing: auto;
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+
+    main {
+        margin-top: var(--header-height);
+    }
+
+    #home .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    #home .image {
+        order: 1;
+    }
+    #home .text {
+        order: 0;
+        max-width: 24rem;
+        text-align: left;
+    }
+
+    #about .container {
+        margin: 0 auto;
+        grid-auto-flow: column;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    
+    #testimonials header, 
+    #testimonials .container {
+        margin-left: auto;
+        margin-right: auto;
+    } 
+
+    #contact .container {
+        grid-auto-flow: column;
+        align-items: center;
+    }
+
+    #contact .text {
+        max-width: 25rem
+    }
+
+    footer.section {
+        padding: 3.75rem 0;
+    }
+
+    footer .container {
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .logo {
+        font-size: 2.25rem;
+    }
+
+}
+/* large devices: 1023 > */
+/* large devices: 992 > */
+@media (min-width: 992px) {
+    :root {
+        --title-font-size: 2.25rem;
+        --subtitle-font-size: 1.125rem; 
+    }
+}
+/* Medium devices: 767 > */
