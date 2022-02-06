@@ -17,7 +17,6 @@
 /* Menu Event List */
 const nav = document.querySelector("#header nav");
 const toggle = document.querySelectorAll("nav .toggle");
-
 for(const element of toggle) {
     element.addEventListener("click", function() {
         nav.classList.toggle("show");
@@ -26,7 +25,6 @@ for(const element of toggle) {
 
 /* Closed Menu */
 const links = document.querySelectorAll("nav ul li a")
-
 for(const link of links) {
     link.addEventListener("click", function() {
         nav.classList.remove("show");
@@ -34,9 +32,9 @@ for(const link of links) {
 }
 
 /* Mudar o header ao usar scroll */
+const header = document.querySelector("#header");
+const navHeight = header.offsetHeight;
 function changeHeaderWhenScroll() {
-    const header = document.querySelector("#header");
-    const navHeight = header.offsetHeight;
 
     if(window.scrollY >= navHeight) {
         //scroll maior que a altura do header
@@ -55,7 +53,13 @@ const swiper = new Swiper(".swiper", {
         el: ".swiper-pagination"
     },
     mousewheel: true,
-    // keyboard: true,
+    keyboard: true,
+    breakpoints: {
+        767: {
+            slidesPerView: 2,
+            setWrapperSize: true,
+        }
+    }
 });
 
 // ScrollReveal: Mostrar elementos quando der scroll na página
@@ -83,7 +87,36 @@ if (window.scrollY >= 560) {
     backToTopButton.classList.remove("show");
 }
 }
+
+// Menu ativo conforme a seção visivel na Pagina
+const sections = document.querySelectorAll("main section[id]");
+function activateMenuAtCurrentSection(){
+
+    const checkPoint = window.pageYOffset + (window.innerHeight / 8) * 4;
+
+    for( const section of sections ) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        const checkPointStart = checkPoint >= sectionTop;
+        const checkPointEnd = checkPoint <= sectionTop + sectionHeight;
+
+        if(checkPointStart && checkPointEnd) {
+            document.querySelector("nav ul li a[href*=" + sectionId + "]")
+            .classList.add("active");
+        } else {
+            document.querySelector("nav ul li a[href*=" + sectionId + "]")
+            .classList.remove("active");
+        }
+
+    }
+
+}    
+
+// Eventos de Rolagem
 window.addEventListener("scroll", function () {
     changeHeaderWhenScroll();
     backToTop();
+    activateMenuAtCurrentSection();
 });
